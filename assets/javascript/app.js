@@ -13,7 +13,6 @@ var correct_answer;
 getQuestions();
 
 function getQuestions(){
-    $(".sectChoices").show();
     var queryURL = "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard&type=multiple";
     $.ajax({
       url: queryURL,
@@ -36,6 +35,7 @@ function getRanQuestion(){
     $.each(allAnswers, function(index, value){
         $('#lbl'+index).html('<input class="form-check-input" type="radio" name="exampleRadios" id="Rad'+index+'" value="'+value+'"> '+value);
     })
+    $(".sectChoices").show();
     $(".sectAnswer").html("");
     $(".sectQuestion").html(trivQuest[ranNum].question)
     decreaseTimer();
@@ -43,10 +43,10 @@ function getRanQuestion(){
     trivQuest.splice(ranNum,1);
     $( ".form-check-input" ).on( "click", function() {
         $( ".form-check-input" ).attr("disabled", true);
-            clearTimeout(questTimer);
-            clearInterval(intervalTimer);
-            var guess = this.value;
-            checkChoice(guess); 
+        clearTimeout(questTimer);
+        clearInterval(intervalTimer);
+        var guess = this.value;
+        checkChoice(guess); 
     });
     
     questionTimer(correct_answer);
@@ -114,8 +114,9 @@ function nextQuestion(){
 function showAnswer(answer){
     score.missed++;
     clearInterval(intervalTimer);
+    $( ".form-check-input" ).attr("disabled", true);
     $(".timer").html("");
-    $(".sectAnswer").html("Correct answer is: "+answer) 
+    $(".sectAnswer").html("Correct answer is: "+answer); 
     nextQuestion();
 }
 
