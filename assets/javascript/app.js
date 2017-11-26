@@ -42,7 +42,6 @@ function getRanQuestion(){
     
     trivQuest.splice(ranNum,1);
     $( ".form-check-input" ).on( "click", function() {
-        console.log(this);
         $( ".form-check-input" ).attr("disabled", true);
             clearTimeout(questTimer);
             clearInterval(intervalTimer);
