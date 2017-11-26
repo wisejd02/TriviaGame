@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.15em;
+    color: rgb(250, 248, 245);
+  }
+  html {
+    /*needed sticky footer for bootstrap */
+    position: relative;
+    min-height: 100%;
+    }
+  .wrapper{
+    width: 100%;
+    background:rgb(238, 239, 238);
+    min-height: 100vh;
+    /* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
+    background-image: url("../images/circuit_bckgnd.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+   }
+ 
+   .sectQuestion{
+    padding-top:5%;
+    line-height:2;
+    background: #01434CD9;
+    margin: 5% auto 0;
+    border: 1px solid #00E3F8;
+    border-bottom: 0;
+   }
+  .sectChoices{
+      
+      font-size:.7em;
+      line-height:2;
+      background: #058895BF;
+      margin: 0 auto 5%;
+      border: 1px solid #00E3F8;
+      border-top: 0;
+  }
+  .sectAnswer{
+    background: #01434CD9;
+    margin: 0 auto;
+    border: 1px solid #00E3F8;
+    border-top: 0;
+    color: rgb(245, 181, 92);
+   
+  }
+
+  .btn-primary-outline {
+    background: transparent;
+    border-color: #ccc;
+    margin-bottom: 2%;
+  }
+
+  .form-check-input{
+      padding: 5px;
+  }
+
+  .btn-primary-outline:hover, .btn-primary-outline:focus, .btn-primary-outline:active, .btn-primary-outline.active, .open>.dropdown-toggle.btn-primary-outline {
+    color: #fff;
+}
+
+  
